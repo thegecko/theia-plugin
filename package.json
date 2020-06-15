@@ -1,0 +1,27 @@
+{
+  "name": "plugin",
+  "description": "a plugin",
+  "publisher": "publisher",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "theiaPlugin": "1.2.0",
+    "node": ">=10.11.0"
+  },
+  "scripts": {
+    "prepare": "yarn run build",
+    "build": "tsc -p tsconfig.json --noEmitOnError true",
+    "watch": "tsc -w -p tsconfig.json --noEmitOnError false"
+  },
+  "devDependencies": {
+    "@theia/plugin": "1.2.0",
+    "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "@theia/core": "1.2.0"
+  },
+  "theiaPlugin": {
+    "backend": "lib/backend.js"
+  },
+  "activationEvents": ["*"]
+}
